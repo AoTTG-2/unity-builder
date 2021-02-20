@@ -39,6 +39,7 @@ class BuildParameters {
       buildFile,
       buildMethod: Input.buildMethod,
       buildVersion,
+      sonarToken: Input.sonarToken,
       androidVersionCode,
       androidKeystoreName: Input.androidKeystoreName,
       androidKeystoreBase64: Input.androidKeystoreBase64,

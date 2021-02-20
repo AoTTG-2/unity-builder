@@ -12,6 +12,10 @@ class Input {
     return core.getInput('unityVersion') || 'auto';
   }
 
+  static get sonarToken() {
+    return core.getInput('sonarToken');
+  }
+
   static get customImage() {
     return core.getInput('customImage');
   }

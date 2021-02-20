@@ -29,6 +29,7 @@ class Docker {
       buildFile,
       buildMethod,
       buildVersion,
+      sonarToken,
       androidVersionCode,
       androidKeystoreName,
       androidKeystoreBase64,
@@ -54,6 +55,7 @@ class Docker {
         --env BUILD_FILE="${buildFile}" \
         --env BUILD_METHOD="${buildMethod}" \
         --env VERSION="${buildVersion}" \
+        --env SONAR_TOKEN="${sonarToken}" \
         --env ANDROID_VERSION_CODE="${androidVersionCode}" \
         --env ANDROID_KEYSTORE_NAME="${androidKeystoreName}" \
         --env ANDROID_KEYSTORE_BASE64="${androidKeystoreBase64}" \

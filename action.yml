@@ -90,6 +90,10 @@ inputs:
     required: false
     default: ''
     description: 'The android keyaliasPass'
+  sonarToken:
+    required: true
+    default: ''
+    description: 'The Sonarqube Token'
   customParameters:
     required: false
     default: ''
