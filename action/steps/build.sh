@@ -1,6 +1,24 @@
 #!/usr/bin/env bash
 
 #
+# SETUP SONARQUBE
+#
+
+set -eu
+
+begin_cmd="/dotnet-sonarscanner begin"
+end_cmd="/dotnet-sonarscanner end"
+
+begin_cmd="$begin_cmd /k:\"AoTTG-2_AoTTG-2\""
+begin_cmd="$begin_cmd /n:\"AoTTG-2\""
+begin_cmd="$begin_cmd /o:\"aottg-2\""
+begin_cmd="$begin_cmd /d:sonar.verbose=\"true\""
+begin_cmd="$begin_cmd /d:sonar.login=\"${SONAR_TOKEN}\""
+end_cmd="$end_cmd /d:sonar.login=\"${SONAR_TOKEN}\""
+
+sh -c "$begin_cmd"
+
+#
 # Set project path
 #
 
@@ -142,6 +160,8 @@ if [[ "$BUILD_TARGET" == "StandaloneOSX" ]]; then
   echo "Making the following path executable: $ADD_PERMISSIONS_PATH"
   chmod +x $ADD_PERMISSIONS_PATH
 fi
+
+sh -c "$end_cmd"
 
 #
 # Results
