@@ -10,8 +10,7 @@ LABEL "repository"="http://github.com/webbertakken/unity-actions"
 LABEL "homepage"="http://github.com/webbertakken/unity-actions"
 LABEL "maintainer"="Webber Takken <webber@takken.io>"
 
-RUN ls -la /opt/*
-RUN for entry in "/opt"/* do echo "$entry" done
+RUN ls -la /opt/Editor/*
 
 # install sonar scanner
 RUN /opt/unity/Editor/Data/NetCore/Sdk-2.2.107/dotnet tool install dotnet-sonarscanner --tool-path . --version 4.7.1
