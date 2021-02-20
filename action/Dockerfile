@@ -10,11 +10,11 @@ LABEL "repository"="http://github.com/webbertakken/unity-actions"
 LABEL "homepage"="http://github.com/webbertakken/unity-actions"
 LABEL "maintainer"="Webber Takken <webber@takken.io>"
 
-RUN ls -la /opt/Editor/*
+RUN ls -la /opt/unity/Editor/*
 
 # install sonar scanner
 RUN /opt/unity/Editor/Data/NetCore/Sdk-2.2.107/dotnet tool install dotnet-sonarscanner --tool-path . --version 4.7.1
-ENV DOTNET_ROOT=/opt/Unity/Editor/Data/NetCore/Sdk-2.2.107/
+ENV DOTNET_ROOT=/opt/unity/Editor/Data/NetCore/Sdk-2.2.107/
 
 ADD default-build-script /UnityBuilderAction
 ADD steps /steps
