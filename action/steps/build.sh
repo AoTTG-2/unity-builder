@@ -17,8 +17,6 @@ begin_cmd="$begin_cmd /d:sonar.verbose=\"true\""
 begin_cmd="$begin_cmd /d:sonar.login=\"${SONAR_TOKEN}\""
 end_cmd="$end_cmd /d:sonar.login=\"${SONAR_TOKEN}\""
 
-sh -c "$begin_cmd"
-
 #
 # Set project path
 #
@@ -127,6 +125,8 @@ echo "#    Building platform    #"
 echo "###########################"
 echo ""
 
+sh -c "$begin_cmd"
+
 unity-editor \
   -nographics \
   -logfile /dev/stdout \
@@ -145,6 +145,8 @@ unity-editor \
   -androidKeyaliasPass "$ANDROID_KEYALIAS_PASS" \
   $CUSTOM_PARAMETERS
 
+sh -c "$end_cmd"
+
 # Catch exit code
 BUILD_EXIT_CODE=$?
 
@@ -161,8 +163,6 @@ if [[ "$BUILD_TARGET" == "StandaloneOSX" ]]; then
   echo "Making the following path executable: $ADD_PERMISSIONS_PATH"
   chmod +x $ADD_PERMISSIONS_PATH
 fi
-
-sh -c "$end_cmd"
 
 #
 # Results
