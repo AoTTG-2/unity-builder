@@ -144,6 +144,8 @@ unity-editor \
   -androidKeyaliasName "$ANDROID_KEYALIAS_NAME" \
   -androidKeyaliasPass "$ANDROID_KEYALIAS_PASS" \
   $CUSTOM_PARAMETERS
+  
+sh -c "/opt/Unity/Editor/Data/NetCore/Sdk-2.2.107/dotnet build AoTTG-2.sln"
 
 sh -c "$end_cmd"
 
